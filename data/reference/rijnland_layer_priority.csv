@@ -1,0 +1,31 @@
+priority,theme,service,what_it_is,key_fields,use_in_prototype,notes
+1,03_wastewater,Lozingspunt,Registered discharge points,"SOORTGELOOSDWATER; DEBIET; FREQUENTIE; CODEWATERGANG; CODERWZI; CODEIBA; CODERIOLERINGSGEBIED",Candidate source points already linked to the receiving watercourse,Check how many rows have DEBIET filled in
+1,03_wastewater,Overstortconstructie,Sewer overflow structures,"SOORTOVERSTORT; DREMPELHOOGTE; OVERSTORTFREQUENTIE; PIEKVOLUMETIS1..10; AANGESLOTENOPPERVLAKTE; RICHTING",Candidate source points with spill frequency and connected area,No spill event history seen; ask the challenge owner
+1,03_wastewater,Effluentgemaal,Effluent pumping stations,"CAPACITEITHUIDIG; AFVOERRICHTING; CODEAWZI; NAAMAWZI",Treated-effluent release points and the plant they belong to,
+1,03_wastewater,Afvalwaterzuivering,Treatment plants,"NAAM; capacity fields",Largest single discharge points; plant names for the map,16+ Rijnland plants
+1,03_wastewater,Iba,Individual wastewater treatment systems,"TYPEIBA; TYPELOZING; ADRES; STATUS",Small dispersed discharge candidates,Address data: handle with care
+1,01_watercourses,Watergang_as,Watercourse centrelines (register),"BREEDTE; DIEPTE; WATERDIEPTE; BODEMBREEDTE; CATEGORIEOPPWATERLICHAAM",Channel network for the graph; width decides satellite visibility,No flow direction field seen
+1,01_watercourses,Watergang_vlak,Watercourse polygons,"category of surface water",Water mask for Sentinel-2 (only wide waters resolve at 10 m),
+1,04_monitoring,Meetlocatie_waterkwantiteit,Quantity measurement locations,"TYPEMETING; LIZARDID; MEETINTERVAL; CODEPEILGEBIED; CODEPOLDER; CODEBOEZEMGEBIED; DEBIETFUNCTIE",Station locations with polder and boezem hierarchy,LIZARDID suggests a time-series platform: ask about API access
+1,04_monitoring,Meetlocatie_waterkwaltiteit,Quality measurement locations,"CODE; NAAM; MONSTERLAAG; KRWWATERTYPE; HYPERLINK",Sampling points for calibration and validation,Layer description looks copied from the quantity layer
+2,02_structures,Gemaal,Pumping stations,"capacity; individual pump data",Gates in the pump-driven network; polder outlets,
+2,02_structures,Stuw,Weirs,"",Flow control in the network,
+2,02_structures,Duiker,Culverts,"",Network connectivity,
+2,02_structures,Inlaat,Inlets,"",Water supply points into the network,
+2,03_wastewater,Rioleringsgebied_stroomrichting,Sewer-area flow directions,"VAN; NAAR; VANGEBIED; NAARGEBIED",Direction of wastewater between sewer areas,
+2,03_wastewater,Rioleringsgebied_awzi_gebied_gerealiseerd,Sewer areas per treatment plant,"",Which plant serves which area,
+2,03_wastewater,Rioolstelsel,Sewer network,"TYPELEIDING; DIAMETER; BOBBOVEN; BOBBENEDEN",Sewer routing where available,
+2,03_wastewater,Rioolgemaal_influent,Influent pumping stations,"EIGENAAR; capacity",Pumping points on the transport chain,
+2,03_wastewater,Transportleiding,Transport pipelines to the plants,"",Chain connectivity,Also see the _Rijnland and _noodleiding segments
+2,03_wastewater,Pilot_data_portaal_afvalwaterketen,2019 sewer data for Alphen a/d Rijn; Bodegraven-Reeuwijk; Waddinxveen,"pumps; manholes; conduits; overflows; drainage surfaces",Detailed test area for tracing an overflow into the water,52 layers; 2019 data
+2,05_levels_and_areas,Peilgebied_vigerend_besluit,Level areas with summer and winter targets,"",Sub-catchments for the twin,
+2,05_levels_and_areas,Polder,Polders,"",Catchment hierarchy,
+2,05_levels_and_areas,Boezemgebied,Boezem area,"",Catchment hierarchy,
+2,05_levels_and_areas,Afwateringseenheid,Drainage units,"",Smaller catchment units,
+2,04_monitoring,KRW,Water Framework Directive water bodies,"",Waters large enough for satellite analysis,40 water bodies
+3,07_projects_and_other,Baggeren_project,Dredging projects by phase,"",False-positive filter for turbidity,
+3,04_monitoring,Zwemwaterlocatie,Bathing water locations,"",Public-facing water quality points,
+3,04_monitoring,TransportleidingMeetpunt,Pipeline measurement points,"",Possible flow data on the transport chain,
+3,05_levels_and_areas,Peilafwijking_vigerend_besluit,Water level deviations,"",Context for pumping behaviour,
+3,06_flood_defences,Regionale_kering,Regional flood defences,"",Context only,
+3,06_flood_defences,Primaire_kering,Primary flood defences,"",Context only,
