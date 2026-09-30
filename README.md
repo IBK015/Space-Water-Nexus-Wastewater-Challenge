@@ -2,7 +2,6 @@
 
 Prototype and research repo for the **Space & Water Nexus Hackathon 2026**, built around the Water Natuurlijk Rijnland challenge: *"Granular insights into wastewater discharges."*
 
-Challenge brief: [`docs/waste_water_challenge.md`](docs/waste_water_challenge.md)
 Event info: https://connect.groundstation.space/space-and-water-nexus-hackathon-1-3-october-cometlab
 
 ## The problem
@@ -16,7 +15,6 @@ data/
   raw/         Downloaded source layers from Rijnland's Legger services and PDOK, organised by theme
   processed/   Derived study-area boundaries and clipped datasets
   reference/   Layer-priority notes and other reference tables
-docs/          Research notes, data-source reviews, and dashboard/concept write-ups from the project
 maps/          Rendered study-area map iterations (PNG)
 ```
 
@@ -41,15 +39,10 @@ gdf = gpd.read_file("data/raw/rijnland_mapserver/01_watercourses/Watergang_vlak.
 
 - **Rijnland Legger services** (`Legger_Oppervlaktewater_Vigerend`, wastewater/sewer layers, monitoring locations, water levels, flood defences) — the authority's statutory GIS registers, pulled via their ArcGIS MapServer.
 - **PDOK** — national reference layers (provinces, municipalities) and the RSA (Rioolwaterzuivering/sewage treatment) dataset: agglomerations, vulnerable areas, discharge points, WWTPs.
-- See `docs/rijnland_data_services_and_shapefiles.md`, `docs/rijnland_16_tiles_and_downloads.md`, and `docs/rijnland_gallery_summary.md` for how each service was found and what it contains.
 
 ## Study area
 
-The study area and its context layers were clipped from the wider Rijnland dataset; see `docs/study_area_data_download.md` for the selection method and `data/processed/` for the resulting boundary and buffer files.
-
-## Concept and dashboard ideas
-
-`docs/digital_twin_dashboard_concepts.md` and `docs/deep_research_digital_twin_dashboard.md` cover the prototype directions considered for the hackathon demo: an anomaly map paired with a flow-based source-tracing view, built around satellite observations flagging candidate areas of interest that still need ground-truthing rather than confirmed pollution events.
+The study area and its context layers were clipped from the wider Rijnland dataset; see `data/processed/` for the resulting boundary and buffer files.
 
 ## Maps
 
